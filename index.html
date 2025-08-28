@@ -1,343 +1,420 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- explicacion: lo primero que deben incluir dentro del documento html es el head, 
-    dentro de el agregaremos titulo, enlaces a hojas de estilo y fuentes entre otras cosas -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Portfolio de Johanna Contreras - Desarrolladora Junior: Me encuentro aprendiendo HTML, CSS y Python."
+    />
+    <meta
+      name="keywords"
+      content="desarrolladora, python, html, css, portfolio, análisis datos, programación, django"
+    />
+    <meta name="author" content="Johanna Contreras" />
+
+    <title>Portfolio de Johanna Contreras - Desarrolladora Junior</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
     />
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <!-- repaso de la estructura del head -->
-  <!-- explicacion: Luego deben agregar el body -->
-  <body class="scroll">
-    <!-- explicacion: dentro del body lo primero que deben agregar es el header y la barra de navegacion -->
-    <header class="encabezado">
-      <nav class="navegacion">
-        <a class="navegacion__enlace" href="#presentacion">
-          <h2 class="navegacion__titulo">Joha-c</h2>
-        </a>
-        <ul class="enlaces">
-          <li class="enlaces__item">
-            <a class="enlaces__enlace" href="#presentacion">Inicio</a>
-          </li>
-          <li class="enlaces__item">
-            <a class="enlaces__enlace" href="#sobre-mi">Sobre mi</a>
-          </li>
-          <li class="enlaces__item">
-            <a class="enlaces__enlace" href="#proyectos">Proyectos</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- repaso de la estructura del header y explicacion de los enlaces -->
+  <body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" />
 
-    <!-- explicacion: A continuacion incluiremos la etiqueta main -->
-    <main class="principal">
-      <!-- explicacion: dentro de esta etiqueta agregaremos las diferentes secciones de nuestra página -->
+    <div class="theme-toggle-container">
+      <label
+        for="theme-toggle"
+        class="theme-toggle-label"
+        aria-label="Cambiar tema"
+        title="Cambiar entre tema claro y oscuro"
+      >
+        <svg
+          class="sun-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          class="moon-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </label>
+    </div>
 
-      <!-- explicacion: Comenzaremos incluyendo una vista de presentacion -->
-      <section class="presentacion" id="presentacion">
-        <div class="presentacion__contenedor_info">
-          <h1 class="presentacion__titulo">Hola! Soy Johanna Contreras. </h1>
-          <p class="presentacion__parrafo">
-            Estoy iniciando el camino como Desarrolladora Junior. Actualmente aprendiendo HTML, CSS y Python en el Informatorio 2025. Con ganas de profundizar mis conocimientos y habilidades en el área de Data Analytics.
-          </p>
-          <div class="presentacion__contenedor_botones">
-            <a href="#sobre-mi" class="boton" role="button">Sobre mí</a>
-            <a
-              href="./assets/docs/cv.pdf"
-              target="_blank"
-              class="boton boton_oscuro"
-              role="button"
-              >Descargar CV</a
-            >
+    <div class="site-wrapper">
+      <a class="skip-link" href="#main-content"
+        >Saltar al contenido principal</a
+      >
+
+      <header class="header">
+        <nav class="nav-bar">
+          <a href="#" class="logo" aria-label="Ir al inicio">
+            <span class="logo-text">Joha-c</span>
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="#about">Acerca de Mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section id="hero" class="hero-section" role="banner">
+          <div class="hero-content">
+            <h1>Hola, soy <span class="highlight">Johanna Contreras</span></h1>
+            <p class="hero-subtitle">
+              Aprendiz de Desarrollo Web, me encuentro estudiando en el
+              <a
+                href="https://campus-informatorio.chaco.gob.ar/"
+                class="informatorio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Informatorio</a
+              >
+              y de manera autodidacta, buscando adquirir conocimientos en
+              <strong>Frontend</strong> y <strong>Python</strong> y continuar mi
+              camino en <strong>Data Analytics</strong>.
+            </p>
+            <div class="cta-buttons">
+              <a href="#projects" class="cta-button primary">
+                <span>Ver Proyectos</span>
+              </a>
+              <a
+                href="./assets/docs/cv.pdf"
+                class="cta-button secondary"
+                download
+                aria-label="Descargar CV en formato PDF"
+              >
+                <span>Descargar CV</span>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-      <!-- repaso de las partes de la seccion -->
 
-      <!-- explicacion: Ahora agregaremos una seccion donde nos explayaremos 
-        sobre nuestra historia personal, para ello escribiremos lo siguiente -->
-      <article class="articulo sobre_mi" id="sobre-mi">
-        <h2 class="articulo__titulo">Un poco sobre mi</h2>
-        <div class="articulo__contenedor_descripciones">
-          <section class="seccion_descripcion">
-            <div class="seccion_descripcion__porta_retrato">
-              <img
-                class="seccion_descripcion__imagen"
-                src="./assets/images/profile/trabajo2.jpg"
-                alt="foto en Narnia"
-                title="galactica"
-              />
-            </div>
-            <div
-              class="seccion_descripcion__info scroll scroll_fino scroll_gris"
-              aria-label="descripcion personal"
-            >
-              <h3 class="seccion_descripcion__titulo" id="mi_historia_titulo">
-                Mi historia
-              </h3>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mi historia"
-                aria-describedby="mi_historia_titulo"
-              >
-                Soy una asistente administrativa con más de 10 años de trayectoria en el sector de contact center.
-              </p>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mi historia"
-                aria-describedby="mi_historia_titulo"
-              >
-                Tengo competencia en el uso de software de oficina, incluyendo Microsoft Office y Google Workspace y tengo la capacidad de aprender rápidamente y adaptarme a nuevas herramientas tecnológicas.
-              </p>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mi historia"
-                aria-describedby="mi_historia_titulo"
-              >
-                Soy hábil para las tareas administrativas, análisis de datos y elaboración de reportes. Proactiva y orientada a la resolución de problemas y a la experiencia del cliente mediante mis habilidades de comunicación.
-              </p>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mi historia"
-                aria-describedby="mi_historia_titulo"
-              >
-                 Soy capaz de trabajar independientemente o en equipo, comprometida con los resultados. Manejo intermedio de Ingles y Portugués. Aficionada a la Fotografía y generación de contenido audiovisual para redes sociales. Tengo 40 años, soy soltera y sin hijos.
-              </p>
-            </div>
-          </section>
-          <!-- explicacion: seguidamente tendremos una seccion muy similar a la anterior 
-            pero cambiaremos el orden de los elementos dejando la imagen al final -->
-          <section class="seccion_descripcion">
-            <div
-              class="seccion_descripcion__info scroll scroll_fino scroll_gris"
-              aria-label="descripcion personal"
-            >
-              <h3 class="seccion_descripcion__titulo" id="mis_hobbies_titulo">
-                Mis hobbies
-              </h3>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mis hobbies"
-                aria-describedby="mis_hobbies_titulo"
-              >
-                Me gusta la fotografía, hacer deportes, 
-              </p>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mis hobbies"
-                aria-describedby="mis_hobbies_titulo"
-              >
-                la jardinería, el senderismo, 
-              </p>
-              <p
-                class="seccion_descripcion__parrafo"
-                aria-label="Detalles de mis hobbies"
-                aria-describedby="mis_hobbies_titulo"
-              >
-                la observación de aves y el disfrute de la Naturaleza en general.
-              </p>
-            </div>
-            <div class="seccion_descripcion__porta_retrato">
-              <img
-                class="seccion_descripcion__imagen seccion_descripcion__imagen_variante"
-                src="./assets/images/profile/trabajo3.jpg"
-                alt="foto pasto"
-                title="Pachamama"
-              />
-            </div>
-          </section>
-        </div>
-      </article>
-      <!-- repaso article sobre mi y su estructura -->
+          <div class="scroll-indicator">
+            <span class="scroll-text">Desliza para conocer más</span>
+            <div class="scroll-arrow"></div>
+          </div>
+        </section>
 
-      <!-- explicacion: En la seccion que sigue agregaremos los proyectos en los que trabajaron,
-      no se preocupen si todavia no cuentan con ninguno, en el momento que comiencen a construirlos 
-      podran ir actualizando la informacion de esta seccion -->
-      <article class="articulo proyectos" id="proyectos">
-        <h2 class="articulo__titulo">Mis proyectos</h2>
-        <div class="contenedor_tarjetas_grid">
-          <article
-            class="tarjeta"
-            aria-label="presentacion de proyecto personal"
-          >
-            <img
-              class="tarjeta__imagen"
-              src="./assets/images/proyectos/Huellitas.png"
-              alt="imagen del proyecto"
-              title="proyecto 1"
-            />
-            <div class="tarjeta__contenido">
-              <h3 class="tarjeta__titulo" id="titulo_proyecto_1">Huellitas</h3>
-              <span class="tarjeta__divisor"></span>
-              <p
-                class="tarjeta__parrafo scroll scroll_fino"
-                aria-label="descripcion de proyecto personal"
-                aria-describedby="titulo_proyecto_1"
-              >
-                Huellitas es un blog realizado con el framework Django. Es nuestro proyecto final del curso de Desarrollo Web en Informatorio 2025.
-              </p>
-              <a href="https://johac.pythonanywhere.com/" class="boton boton_oscuro" target="_blank"
-                >Ver proyecto</a
-              >
-            </div>
-          </article>
-          <!-- explicacion: pueden agregar tantas tarjetas como deseen, para ejemplificar agregaremos seis. 
-            Podemos hacerlo simplemente copiando y pegando. Yo en mi caso en algunas tarjetas agregare un pequeño cambio a los botones  -->
-          <article
-            class="tarjeta"
-            aria-label="presentacion de proyecto personal"
-          >
-            <img
-              class="tarjeta__imagen"
-              src="./assets/images/proyectos/reproductormp3.png"
-              alt="imagen del proyecto"
-              title="proyecto 2"
-            />
-            <div class="tarjeta__contenido">
-              <h3 class="tarjeta__titulo" id="titulo_proyecto_2">Reproductor de Mp3</h3>
-              <span class="tarjeta__divisor"></span>
-              <p
-                class="tarjeta__parrafo scroll scroll_fino scroll_gris"
-                aria-label="descripcion de proyecto personal"
-                aria-describedby="titulo_proyecto_2"
-              >
-                Primer proyecto grupal realizado en la Etapa 2 del informatorio. Se trata de un reproductor basico de mp3 realizado con python y Tkinter.
-              </p>
-              <a href="https://github.com/joha-c/reproductormultimedia" class="boton" target="_blank">Ver proyecto</a>
-            </div>
-          </article>
-          <article
-            class="tarjeta"
-            aria-label="presentacion de proyecto personal"
-          >
-            <img
-              class="tarjeta__imagen"
-              src="./assets/images/proyectos/tipeo.png"
-              alt="imagen del proyecto"
-              title="proyecto 3"
-            />
-            <div class="tarjeta__contenido">
-              <h3 class="tarjeta__titulo" id="titulo_proyecto_3">Entrenador de Tipeo</h3>
-              <span class="tarjeta__divisor"></span>
-              <p
-                class="tarjeta__parrafo scroll scroll_fino"
-                aria-label="descripcion de proyecto personal"
-                aria-describedby="titulo_proyecto_3"
-              >
-                Es mi primer proyecto individual. Se trata de un entrenador de tipeo realizado con python y Tkinter.
-              </p>
-              <a href="https://github.com/joha-c/Fingering" class="boton boton_oscuro" target="_blank"
-                >Ver proyecto</a
-              >
-            </div>
-          </article>
-          
-        </div>
-      </article>
-      <!-- repaso del articulo proyectos -->
-    </main>
-    <!-- repaso de todo lo incluido en la etiqueta main -->
+        <section id="about" class="section about-section">
+          <div class="container">
+            <h2>Acerca de Mí</h2>
+            <div class="about-content">
+              <div class="about-text">
+                <p>
+                  Soy una estudiante y desarrolladora principiante especializada
+                  en <strong>HTML</strong>, <strong>CSS</strong> y
+                  <strong>Python</strong>. Estoy en constante aprendizaje para
+                  expandir mis conocimientos, con un interés particular en el
+                  <strong>Análisis de Datos</strong> y el desarrollo web.
+                </p>
+                <p>
+                  Mi objetivo es conseguir mi primer empleo en el mundo de la
+                  tecnología, donde pueda aplicar mis conocimientos y seguir
+                  creciendo profesionalmente en un ambiente colaborativo y
+                  desafiante.
+                </p>
 
-    <!-- Por ultimo deben agregar la etiqueta footer. 
-      En esta aparecera nuestra informacion de contacto y 
-      también inluiremos enlaces de navegacion y derechos. -->
-    <footer class="pie_de_pagina" role="contentinfo">
-      <!-- explicacion: la primer columna sera para nuestras redes,
-        cabe aclarar que la estructura sera similar en todos los casos y solo habrá pequeños cambios -->
-      <div class="pie_de_pagina__columna">
-        <h4 class="pie_de_pagina__titulo_columna">Mis redes</h4>
-        <ul class="enlaces enlaces_redes">
-          <li class="enlaces__item">
-            <a
-              class="enlaces__enlace enlaces__enlace_footer"
-              href="https://github.com/joha-c"
-              target="_blank"
-              ><img
-                class="enlaces__icono"
-                src="./assets/images/logos/github-logo.png"
-                alt="logo de github"
-                title="github"
-            /></a>
-          </li>
-          <li class="enlaces__item">
-            <a
-              class="enlaces__enlace enlaces__enlace_footer"
-              href="https://www.instagram.com/joha_contreras/"
-              target="_blank"
-            >
-              <img
-                class="enlaces__icono"
-                src="./assets/images/logos/ig-logo.png"
-                alt="logo de instagram"
-                title="instagram"
-              />
-            </a>
-          </li>
-          <li class="enlaces__item">
-            <a
-              class="enlaces__enlace enlaces__enlace_footer"
-              href="https://www.linkedin.com/in/johannacontreras-arg/"
-              target="_blank"
-              ><img
-                class="enlaces__icono"
-                src="./assets/images/logos/linkedin.png"
-                alt="logo de linkedin"
-                title="linkedin"
-            /></a>
-          </li>
-        </ul>
-      </div>
-      <!-- explicacion: la segunda columna sera para nuestros medios de contacto  -->
-      <div class="pie_de_pagina__columna">
-        <h4 class="pie_de_pagina__titulo_columna">Contactame</h4>
-        <ul class="enlaces enlaces_vertical">
-          <li class="enlaces__item">
-            <a
-              class="enlaces__enlace enlaces__enlace_footer"
-              href="mailto:mail@mail.com"
-              target="_blank"
-              >Mail: johanna_contreras@hotmail.com</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- explicacion: la ultima columna sera para los enlaces de navegacion -->
-      <div class="pie_de_pagina__columna" role="navigation">
-        <h4 class="pie_de_pagina__titulo_columna">Secciones</h4>
-        <ul class="enlaces enlaces_vertical">
-          <li class="enlaces__item">
-            <a
-              class="enlaces__enlace enlaces__enlace_footer"
-              href="#presentacion"
-              >Inicio</a
-            >
-          </li>
-          <li class="enlaces__item">
-            <a class="enlaces__enlace enlaces__enlace_footer" href="#sobre-mi"
-              >Sobre mi</a
-            >
-          </li>
-          <li class="enlaces__item">
-            <a class="enlaces__enlace enlaces__enlace_footer" href="#proyectos"
-              >Proyectos</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- por ultimo los derechos de la pagina -->
-      <div class="pie_de_pagina__copyright">
-        <p>©️Copyright 2025</p>
-      </div>
-    </footer>
-    <!-- repaso de los elementos en el footer -->
+                <div class="skills-highlight">
+                  <h3>Tecnologías que estoy aprendiendo a manejar:</h3>
+                  <ul class="skills-list">
+                    <li><span class="skill-tag">HTML5</span></li>
+                    <li><span class="skill-tag">CSS3</span></li>
+                    <li><span class="skill-tag">Python</span></li>
+                    <li><span class="skill-tag">Django</span></li>
+                    <li><span class="skill-tag">Tkinter</span></li>
+                    <li><span class="skill-tag">Git</span></li>
+                  </ul>
+                </div>
+
+                <a href="#contact" class="link-button">
+                  <span>Conecta Conmigo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+          <div class="container">
+            <h2>Mis Proyectos</h2>
+            <p class="section-subtitle">
+              Esta es una muestra los proyectos en los cuales estoy trabajando
+              en el
+              <a
+                href="https://campus-informatorio.chaco.gob.ar/"
+                class="informatorio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Informatorio</a
+              >
+              y de manera particular, para desarrollar mis habilidades con los
+              distintos lenguajes.
+            </p>
+
+            <div class="project-grid">
+              <article class="project-item">
+                <div class="project-image-container">
+                  <img
+                    src="./assets/images/proyectos/blog_noticias.png"
+                    alt="Captura de pantalla del blog de noticias desarrollado en Django mostrando la interfaz principal"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-card">
+                  <div class="project-header">
+                    <h3>Blog de Noticias</h3>
+                    <div class="project-tags">
+                      <span class="tag">Django</span>
+                      <span class="tag">Python</span>
+                      <span class="tag">HTML/CSS</span>
+                    </div>
+                  </div>
+                  <p>
+                    Proyecto grupal de la etapa 2 del
+                    <a
+                      href="https://campus-informatorio.chaco.gob.ar/"
+                      class="informatorio-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Informatorio</a
+                    >
+                    realizado con el framework Django para la creación de un
+                    blog de noticias dinámico con funcionalidades CRUD
+                    completas.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      href="https://johac.pythonanywhere.com"
+                      class="project-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Ver blog de noticias en vivo"
+                    >
+                      <span>Ver Proyecto</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-item">
+                <div class="project-image-container">
+                  <img
+                    src="./assets/images/proyectos/entrenador_tipeo.png"
+                    alt="Interfaz del entrenador de tipeo mostrando ejercicios de velocidad"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-card">
+                  <div class="project-header">
+                    <h3>Entrenador de Tipeo</h3>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Tkinter</span>
+                      <span class="tag">Desktop App</span>
+                    </div>
+                  </div>
+                  <p>
+                    Una herramienta de escritorio desarrollada de forma
+                    autodidacta para mejorar la velocidad y precisión al
+                    escribir, con seguimiento de progreso y estadísticas
+                    detalladas.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/joha-c/Fingering"
+                      class="project-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Ver repositorio del entrenador de tipeo en GitHub"
+                    >
+                      <span>Ver Proyecto</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-item">
+                <div class="project-image-container">
+                  <img
+                    src="./assets/images/proyectos/reproductor_musica.png"
+                    alt="Interfaz del reproductor de música con controles básicos de reproducción"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-card">
+                  <div class="project-header">
+                    <h3>Reproductor de Música</h3>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Tkinter</span>
+                      <span class="tag">Multimedia</span>
+                    </div>
+                  </div>
+                  <p>
+                    Primer proyecto grupal del
+                    <a
+                      href="https://campus-informatorio.chaco.gob.ar/"
+                      class="informatorio-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Informatorio</a
+                    >
+                    Etapa 2. Un reproductor de música sencillo que muestra el
+                    uso efectivo de la librería Tkinter para crear interfaces de
+                    usuario intuitivas.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/joha-c/reproductormultimedia"
+                      class="project-link primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Ver repositorio del reproductor de música en GitHub"
+                    >
+                      <span>Ver Proyecto</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+          <div class="container">
+            <h2>¿Hablamos?</h2>
+            <p class="contact-intro">
+              ¿Te interesa mi perfil o tienes una oportunidad de empleo? No
+              dudes en contactarme. Estoy abierta a nuevas oportunidades y
+              colaboraciones.
+            </p>
+
+            <div class="contact-content">
+              <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <div class="contact-item">
+                  <strong>Email:</strong>
+                  <a href="mailto:johanna_contreras@hotmail.com"
+                    >johanna_contreras@hotmail.com</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <strong>Ubicación:</strong>
+                  <span>Resistencia, Chaco, Argentina</span>
+                </div>
+              </div>
+
+              <div class="contact-links">
+                <a
+                  class="contact-link"
+                  href="mailto:johanna_contreras@hotmail.com"
+                  target="_blank"
+                  aria-label="Enviar email a Johanna"
+                >
+                  <img
+                    class="contact-icon"
+                    src="./assets/images/logos/mail.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="contact-text">Email</span>
+                </a>
+
+                <a
+                  class="contact-link"
+                  href="https://github.com/joha-c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de GitHub de Johanna"
+                >
+                  <img
+                    class="contact-icon"
+                    src="./assets/images/logos/github-logo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="contact-text">GitHub</span>
+                </a>
+
+                <a
+                  class="contact-link"
+                  href="https://www.instagram.com/joha_contreras/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de Instagram de Johanna"
+                >
+                  <img
+                    class="contact-icon"
+                    src="./assets/images/logos/ig-logo.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="contact-text">Instagram</span>
+                </a>
+
+                <a
+                  class="contact-link"
+                  href="https://www.linkedin.com/in/johannacontreras-arg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de LinkedIn de Johanna"
+                >
+                  <img
+                    class="contact-icon"
+                    src="./assets/images/logos/linkedin.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="contact-text">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2025 Johanna Contreras. Todos los derechos reservados.</p>
+          <p class="footer-note">
+            Desarrollado con <span class="heart">❤️</span> y mucho café
+          </p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
